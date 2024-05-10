@@ -266,9 +266,9 @@ module "fargate_profile" {
 ################################################################################
 # EKS Managed Node Group
 ################################################################################
-/*
+
 module "eks_managed_node_group" {
-  source = "./modules/eks-managed-node-group"
+  source = "./modules/eks-managed-node-group-2"
 
   for_each = { for k, v in var.eks_managed_node_groups : k => v if var.create && !local.create_outposts_local_cluster }
 
@@ -372,7 +372,7 @@ module "eks_managed_node_group" {
 
   tags = merge(var.tags, try(each.value.tags, var.eks_managed_node_group_defaults.tags, {}))
 }
-*/
+
 ################################################################################
 # Self Managed Node Group
 ################################################################################

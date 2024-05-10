@@ -15,7 +15,11 @@ variable "platform" {
   type        = string
   default     = "linux"
 }
-
+variable "azs" {
+  description = "A list of availability zones names or ids in the region. Depending on region"
+  type        = list(string)
+  default     = ["eu-central-1a","eu-central-1b"]
+}
 ################################################################################
 # User Data
 ################################################################################
